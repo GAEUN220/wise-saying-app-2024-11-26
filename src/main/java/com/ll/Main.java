@@ -1,9 +1,21 @@
 package com.ll;
 
+import java.util.Scanner;
+
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello");
+        lab1();
+
     }
+
+    private static void lab1() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("명령) ");
+        String cmd = scanner.nextLine().trim();
+        System.out.println("입력한 명령 : " + cmd);
+
+    }
+
 }
