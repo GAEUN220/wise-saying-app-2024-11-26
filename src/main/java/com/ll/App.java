@@ -23,6 +23,12 @@ public class App {
             if ("종료".equals(cmd)) {
                 systemController.actionExit();
                 break;
+            } else if ("등록".equals(cmd)) {
+                System.out.print("명언 : ");
+
+                System.out.print("작가 : ");
+
+
             }
         }
 
