@@ -1,6 +1,7 @@
 package com.ll.domain.wiseSaying.contro;
 
 import com.ll.domain.wiseSaying.entity.WiseSaying;
+import com.ll.domain.wiseSaying.service.WiseSayingService;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,13 +9,12 @@ import java.util.Scanner;
 
 public class WiseSayingController {
     private final Scanner scanner;
-    private int lastID;
-    private List<WiseSaying> wiseSayings;
+    private final WiseSayingService wiseSayingService;
+
 
     public WiseSayingController(Scanner scanner) {
         this.scanner = scanner;
-        this.lastID = 0;
-        this.wiseSayings = new ArrayList<>();
+        this.wiseSayingService = new WiseSayingService();
     }
 
     public void actionAdd() {
@@ -23,12 +23,9 @@ public class WiseSayingController {
         System.out.print("작가 : ");
         String author = scanner.nextLine();
 
-        int id = ++lastID;
+        WiseSaying wiseSaying = wiseSayingService.add(content, author);
 
-        WiseSaying wiseSaying = new WiseSaying(id, content, author);
-        wiseSayings.add(wiseSaying);
-
-        System.out.print(id +"번 명언이 등록되었습니다.");
+        System.out.println(wiseSaying.getId() + "번 명언이 등록되었습니다.");
 
 
     }
@@ -37,6 +34,8 @@ public class WiseSayingController {
 
         System.out.println("번호 / 작가 / 명언");
         System.out.println("----------------------");
+
+        List<WiseSaying> wiseSayings = wiseSayingService.findAll();
 
         for (WiseSaying wiseSaying : wiseSayings.reversed()) {
             System.out.println(wiseSaying.getId() + " / " + wiseSaying.getAuthor() + " / " + wiseSaying.getContent());
