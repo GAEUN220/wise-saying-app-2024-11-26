@@ -30,4 +30,6 @@ public class CommandTest {
         assertThat(cmd.getParam("number", "-")).isEqualTo("-");
     }
 
+
+
 }
