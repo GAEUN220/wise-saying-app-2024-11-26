@@ -125,4 +125,23 @@ public class WiseSayingControllerTest {
 
     }
 
+    @Test
+    @DisplayName("수정 명령여 : 기존 명언과 기존 작가를 보여준다.")
+    public void t10() {
+        String output = AppTest.run("""
+                등록
+                현재를 사랑하라.
+                작자미상
+                등록
+                과거에 집착하지 마라.
+                작자미상
+                수정?id=2
+                """);
+
+        assertThat(output)
+                .contains("명언(기존) : 과거에 집착하지 마라.")
+                .contains("작가(기존) : 작자미상");
+
+    }
+
 }
