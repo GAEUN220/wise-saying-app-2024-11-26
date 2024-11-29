@@ -69,5 +69,13 @@ public class CommandTest {
         assertThat(cmd.getParam("name")).isEqualTo("Paul");
     }
 
+    @Test
+    @DisplayName("""
+            new Command("목록? ") does not throws Exception
+            """)
+    public void t8() {
+        Command cmd = new Command("목록? ");
+    }
+
 
 }
