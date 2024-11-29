@@ -13,6 +13,10 @@ public class WiseSaying {
         this.author = author;
     }
 
+    public boolean isNew() {
+        return id == 0;
+    }
+
     public int getId() {
         return id;
     }
@@ -36,4 +40,6 @@ public class WiseSaying {
     public void setAuthor(String author) {
         this.author = author;
     }
+
+
 }
