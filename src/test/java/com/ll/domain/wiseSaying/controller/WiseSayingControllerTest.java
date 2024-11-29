@@ -144,4 +144,25 @@ public class WiseSayingControllerTest {
 
     }
 
+    @Test
+    @DisplayName("수정 명령어 : 명언이 수정된다.")
+    public void t11() {
+        String output = AppTest.run("""
+                등록
+                현재를 사랑하라.
+                작자미상
+                등록
+                과거에 집착하지 마라.
+                작자미상
+                수정?id=2
+                현재와 자신을 사랑하라.
+                홍길동
+                목록
+                """);
+
+        assertThat(output)
+                .contains("2 / 홍길동 / 현재와 자신을 사랑하라.");
+
+    }
+
 }
