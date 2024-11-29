@@ -82,6 +82,10 @@ public class WiseSayingController {
 
         WiseSaying wiseSaying = opwiseSaying.get();
         System.out.println("명언(기존) : " + wiseSaying.getContent());
+        String content = scanner.nextLine();
         System.out.println("작가(기존) : " + wiseSaying.getAuthor());
+        String author = scanner.nextLine();
+
+        wiseSayingService.modify(wiseSaying, content, author);
     }
 }
