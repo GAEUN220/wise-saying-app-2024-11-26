@@ -22,7 +22,7 @@ public class UtilTest {
     }
     @Test
     @DisplayName("파일의 내용을 수정할 수 있고, 읽을 수 있다.")
-    public void t1() {
+    public void t2() {
         // given
         String filePath = "test.txt";
 
