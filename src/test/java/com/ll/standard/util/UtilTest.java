@@ -1,10 +1,9 @@
 package com.ll.standard.util;
 
-import jdk.jshell.execution.Util;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class UtilTest {
     @Test
@@ -16,10 +15,9 @@ public class UtilTest {
         // when
         Util.file.touch(filePath);
 
-        //then
+        // then
         assertThat(
                 Util.file.exists(filePath)
         ).isTrue();
-
     }
 }
