@@ -48,7 +48,7 @@ public class UtilTest {
         // then
         assertThat(
                 Util.file.notExists(filePath)
-        ).isTrue;
+        ).isTrue();
     }
 
 }
