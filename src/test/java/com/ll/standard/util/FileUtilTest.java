@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class UtilTest {
+public class FileUtilTest {
     @BeforeAll
     public static void beforeAll() {
         Util.file.mkdir("temp");
@@ -32,7 +32,6 @@ public class UtilTest {
                 Util.file.exists(filePath)
         ).isTrue();
 
-        Util.file.delete(filePath);
     }
 
     @Test
@@ -49,7 +48,6 @@ public class UtilTest {
                 Util.file.get(filePath, "")
         ).isEqualTo("내용");
 
-        Util.file.delete(filePath);
     }
 
     @Test
@@ -82,6 +80,7 @@ public class UtilTest {
                 Util.file.exists(filePath)
         ).isTrue();
 
-        Util.file.delete(filePath);
     }
+
+
 }
