@@ -1,7 +1,5 @@
 package com.ll.standard.util;
 
-import jdk.internal.icu.lang.UCharacterDirection;
-
 import java.io.IOException;
 import java.nio.file.*;
 import java.nio.file.attribute.BasicFileAttributes;
@@ -114,7 +112,7 @@ public class Util {
 
             map.forEach((key, value) -> {
                 sb.append("    ");
-                sb.append("\"%s\": \"%s\"".formatted(key, value));
+                sb.append("\"%s\" : \"%s\"".formatted(key, value));
             });
 
             sb.append("\n");
